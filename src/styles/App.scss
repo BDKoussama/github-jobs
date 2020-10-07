@@ -1,2 +1,17 @@
 @import "./normalize.scss";
+@import "./components//Header.scss";
 
+.container {
+    height: 100vh;
+    border: 1px solid red; 
+    margin: 0 auto;
+    @media (min-width: 1024px) {
+        max-width: 960px;
+      }
+      @media (min-width: 1216px) {
+        max-width: 1152px;
+      }
+      @media (min-width: 1480px) {
+        max-width: 1244px;
+      }
+}
