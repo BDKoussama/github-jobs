@@ -4,6 +4,7 @@ import { faSuitcase ,  faGlobeAfrica , faClock} from '@fortawesome/free-solid-sv
 import Header from './Components/Header';
 import Search from './Components/Search';
 import Content from './Content' ; 
+import Footer from './Components/Footer';
 import './styles/App.scss';
 
 
@@ -18,6 +19,7 @@ function App() {
               <Header/>
               <Search/>
               <Content/>
+              <Footer/>
         </div>
     </div>
   );
