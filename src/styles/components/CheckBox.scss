@@ -2,7 +2,6 @@
     display: block;
     position: relative;
     padding-left: 30px;
-    margin-bottom: 12px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
@@ -12,6 +11,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin: 1Em 0em;
 }
 
 /* Hide the browser's default checkbox */
@@ -30,7 +30,7 @@
     height: 18px;
     width: 18px;
     border: 1px solid $lightGrey;
-    border-radius: $borderRadius;
+    border-radius: 2px;
 }
 
 /* On mouse-over, add a grey background color */

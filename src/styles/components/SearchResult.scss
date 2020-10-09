@@ -10,77 +10,53 @@
         .search-filters {
             flex: 1;
             height: 100%;
+            margin-right: 32px;
            /* The container */
-                .container-checkbox {
-                    display: block;
-                    position: relative;
-                    padding-left: 30px;
-                    margin-bottom: 12px;
-                    cursor: pointer;
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 21px;
-                    color: $darkBlue;;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
+           .location-form__title {
+                margin: 30px 0Px;
+                font-size: 14px;
+                text-transform: uppercase;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 21px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: $lightGrey;
+            }
 
-                /* Hide the browser's default checkbox */
-                .container-checkbox input {
-                    position: absolute;
-                    opacity: 0;
-                    cursor: pointer;
-                    
+            .city-input {
+                height: 50px;
+                border-radius: $borderRadius;
+                padding: 0 1em;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+                display: flex;
+                flex-direction: row; 
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 40px;
+                background-color: $white;
+                .location-icon {
+                    color: $lightGrey;
                 }
-
-                /* Create a custom checkbox */
-                .container-checkbox .checkmark {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 18px;
-                    width: 18px;
-                    border: 1px solid $lightGrey;
-                    border-radius: $borderRadius;
+                input {
+                    border: none;
+                    height: 100%;
+                    background-color: transparent;
+                    width: 100%; 
+                    outline: none;
+                    &::placeholder {
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 14px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        color: $lightGrey;
+                        padding-left: 10px;
+                    }
                 }
-
-                /* On mouse-over, add a grey background color */
-                .container-checkbox:hover input ~ .checkmark {
-                    /*background-color: #ccc;*/
-                }
-
-                /* When the checkbox is checked, add a blue background */
-                .container-checkbox input:checked ~ .checkmark {
-                    background-color: $blue;
-                }
-
-                /* Create the checkmark/indicator (hidden when not checked) */
-                .container-checkbox .checkmark:after {
-                    content: "";
-                    position: absolute;
-                    display: none;
-                }
-
-                /* Show the checkmark when checked */
-                .container-checkbox input:checked ~ .checkmark:after {
-                    display: block;
-                }
-
-                /* Style the checkmark/indicator */
-                .container-checkbox .checkmark:after {
-                    left: 5px;
-                    top: 2px;
-                    width: 4px;
-                    height: 8px;
-                    border: solid white;
-                    border-width: 0 2px 2px 0;
-                    -webkit-transform: rotate(45deg);
-                    -ms-transform: rotate(45deg);
-                    transform: rotate(45deg);
-                }
-
+            }
         }
 
 
@@ -92,5 +68,89 @@
         .jobs-list {
             flex: 3;
             height: 100%;
+            .job-item {
+                height: 120px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 32px;
+                padding: 12px;
+                background: #FFFFFF;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+                border-radius: $borderRadius;
+                .job-info {
+                    margin-left: 16px;
+                    flex: 2;
+                }
+                .company-image {
+                    height: 90px;
+                    width: 90px;
+                    border: 1px solid $lightGrey;
+                    border-radius: $borderRadius;
+                }
+
+                .company-name {
+                    color: $darkBlue;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 14px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-bottom: 8px;
+                }
+
+                .job-title {
+                    color: $darkBlue;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 21px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-bottom: 18px;
+                }
+
+                .other-info {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                    .job-type {
+                        font-family: 'Roboto' , sans-serif;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 14px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        color: $darkBlue;
+                        padding: 0.3em;
+                        border: 1px solid $darkBlue;
+                        border-radius: $borderRadius;
+
+                    }
+                    .job-location , 
+                    .publish-time {
+                        font-family: 'Roboto' , sans-serif;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 14px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        color: $lightGrey;
+                        .icon {
+                            margin-right: 0.3em;
+                        }
+                    }
+                    .job-location {
+                        margin-right: 30px;
+                    }
+                }
+            }
         }
 }
