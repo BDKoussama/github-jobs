@@ -1,17 +1,18 @@
 .search-result{
     width: 100%;
     margin-top: 42px;
-    height: 50vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
     /* Search Filters */
         .search-filters {
-            flex: 1;
-            height: 100%;
+            width: 100%;
             margin-right: 32px;
-           /* The container */
+            margin-bottom: 15px;
+
            .location-form__title {
                 margin: 30px 0Px;
                 font-size: 14px;
@@ -66,13 +67,12 @@
         
     /* Jobs List */
         .jobs-list {
-            flex: 3;
-            height: 100%;
+            width: 100%;
             .job-item {
-                height: 120px;
+                height: auto;
                 display: flex;
                 flex-direction: row;
-                align-items: center;
+                align-items: flex-start;
                 margin-bottom: 32px;
                 padding: 12px;
                 background: #FFFFFF;
@@ -104,7 +104,7 @@
                 .job-title {
                     color: $darkBlue;
                     font-family: 'Roboto', sans-serif;
-                    font-size: 18px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: 21px;
@@ -118,8 +118,9 @@
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: center;
-                    
+                    flex-wrap: wrap;
                     .job-type {
+                        
                         font-family: 'Roboto' , sans-serif;
                         font-size: 12px;
                         font-style: normal;
@@ -131,7 +132,10 @@
                         padding: 0.3em;
                         border: 1px solid $darkBlue;
                         border-radius: $borderRadius;
-
+                        margin-bottom: 16px;
+                    }
+                    .job-time_location {
+                        width: 100%;
                     }
                     .job-location , 
                     .publish-time {
@@ -153,4 +157,45 @@
                 }
             }
         }
+
+
+
+        /*
+            media queries 
+
+            
+        */
+
+        @media (min-width: 780px)  { 
+
+            .search-filters {
+                flex: 1;
+            }
+
+            .jobs-list {
+                flex: 3;
+
+                .job-item {
+
+                    .job-title  {
+                        font-size: 18px;
+                    }
+
+                    .other-info {
+
+                        .job-type {
+                            margin: 0;
+                        }
+
+                        .job-time_location  {
+                            width: 50%;
+                            text-align: right;
+                            padding-right: 1em;
+                        }
+
+                    }
+                }
+            }
+        }
+
 }

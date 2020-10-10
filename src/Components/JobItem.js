@@ -10,7 +10,7 @@ const JobItem = () => {
                <h1 className = "job-title">Front-End Software Engineer</h1>
                <div className ="other-info">
                    <span className = 'job-type'>Full time</span>
-                   <div>
+                   <div className ='job-time_location'>
                        <span className = "job-location">
                                <FontAwesomeIcon icon='globe-africa'  size="lg" className="icon"/>
                                New York
