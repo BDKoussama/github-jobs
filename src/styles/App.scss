@@ -24,16 +24,19 @@ body {
     position: relative;
     min-height: 100vh;
     margin: 0 auto;
-      @media (max-width: 700px) {
-      }
-      @media (max-width: 1024px) {
+    padding: 10px;
+
+      @media (min-width: 1024px) {
         max-width: 960px;
-        padding: 10px;
+        padding: 0;
       }
       @media (min-width: 1216px) {
         max-width: 1152px;
+        padding: 0;
       }
       @media (min-width: 1480px) {
         max-width: 1244px;
+        padding: 0;
       }
+
 }
