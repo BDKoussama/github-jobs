@@ -9,6 +9,8 @@ const JobsList = () => {
                 <JobItem/>
                 <JobItem/>
                 <JobItem/>
+                <JobItem/>
+                <JobItem/>
             </ul>
         </div>
     )
