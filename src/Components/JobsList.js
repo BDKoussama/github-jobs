@@ -1,16 +1,14 @@
 import React from 'react'; 
 import JobItem from './JobItem';
-
+import {data} from '../dummy' ;
 
 const JobsList = () => {
     return (
         <div className = "jobs-list">
             <ul>
-                <JobItem/>
-                <JobItem/>
-                <JobItem/>
-                <JobItem/>
-                <JobItem/>
+               {data.map(item => (
+                    <JobItem job = {item} key= {item.id} />
+               ))}
             </ul>
         </div>
     )
