@@ -1,19 +1,18 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSuitcase ,  faGlobeAfrica , faClock} from '@fortawesome/free-solid-svg-icons'
+import { faSuitcase ,  faGlobeAfrica , faClock , faLongArrowAltLeft} from '@fortawesome/free-solid-svg-icons'
 import './styles/App.scss';
 import Home from './pages/Home' ;
 import Offer from './pages/Offer' ;
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom"; 
 
-library.add(faSuitcase , faGlobeAfrica, faClock );
+library.add(faSuitcase , faGlobeAfrica, faClock , faLongArrowAltLeft);
 
 
 

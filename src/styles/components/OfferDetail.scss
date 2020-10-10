@@ -1,0 +1,167 @@
+
+.offer-detail__wrapper{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .left-sidebar {
+        margin-bottom: 35px;
+        .back-link {
+            color: $blue;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 21px;
+            letter-spacing: 0em;
+            text-decoration: none;
+            margin-bottom: 35px;
+            .back-icon {
+                margin-right: 15px;
+            }
+        }
+
+        .howto-apply {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 21px;
+            letter-spacing: 0em;
+            text-align: left;
+            text-transform: uppercase;
+            color: $lightGrey;
+            margin-top: 35px;
+        }
+
+
+        .contact-info {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 21px;
+            letter-spacing: 0em;
+            text-align: left;
+            a{
+                color: $blue;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .offer-detail {
+        .job-title__wrapper {
+            font-family: 'Roboto' , sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            .job-title {
+                width: 100%;
+                margin-bottom: 10px;
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: $darkBlue;
+                margin-right: 25px;
+            }
+
+            .job-type {
+                font-size: 12px;
+                line-height: 14px;
+                text-align: left;
+                color: $darkBlue;
+                padding: 0.3em;
+                border: 1px solid $darkBlue;
+                border-radius: $borderRadius;
+            }
+        }
+
+        .publish-time {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 14px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: $lightGrey;
+            .icon {
+                margin-right: 0.5em;
+            }
+        }
+
+
+        .about-company {
+            margin: 32px 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .company-logo {
+                width: 42px;
+                height: 42px;
+                border: 1px solid $lightGrey;
+                border-radius: $borderRadius;
+            }
+
+            .company-info {
+                margin-left: 12px;
+                .company-name {
+                    font-family: 'Roboto' , sans-serif;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 21px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-bottom: 10px;
+                    color: $darkBlue;
+                }
+
+                .company-location {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 14px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: $lightGrey;
+                    .icon {
+                        margin-right: 0.5em;
+                    }
+                }
+            }
+        }
+
+        .job-description {
+            font-family: 'Roboto' , sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: $darkBlue;
+        }
+    }
+
+    @media (min-width: 870px)  { 
+        .left-sidebar {
+            flex: 1;
+            margin-right: 10px;
+            .contact-info  {
+                padding-right: 20px;
+            }
+        }   
+
+        .offer-detail {
+            flex: 3;
+        }
+     }
+}
