@@ -3,10 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Link} from 'react-router-dom' ;
 import moment from 'moment' ;
 const JobItem = ({job}) => {
+
+    const imgNotFound = '../assets/imgs/unnamed.png' ;
     return (
 
             <li className ='job-item'>
-                <div className ="company-image" style = {{backgroundImage: `url(${job.company_logo})`}}> 
+                <div className ="company-image" > 
+                    <img className="" height="auto" width = "auto" alt={job.company} src={job.company_logo || require("../assets/imgs/unnamed.png")}  />
                 </div>
                 <div className ="job-info">
                 <h3 className ="company-name">{job.company}</h3>
