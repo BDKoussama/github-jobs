@@ -144,6 +144,9 @@
                     }
                     .job-time_location {
                         width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
                     }
                     .job-location , 
                     .publish-time {
@@ -160,7 +163,12 @@
                         }
                     }
                     .job-location {
+                        overflow-x: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 150px;
                         margin-right: 30px;
+                        display: block;
                     }
                 }
             }

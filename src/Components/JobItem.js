@@ -6,7 +6,7 @@ const JobItem = ({job}) => {
     return (
 
             <li className ='job-item'>
-                <div className ="company-image" style = {{ backgroundImage: `url(${job.company_logo})` }}> 
+                <div className ="company-image" style = {{backgroundImage: `url(${job.company_logo})`}}> 
                 </div>
                 <div className ="job-info">
                 <h3 className ="company-name">{job.company}</h3>
@@ -22,7 +22,7 @@ const JobItem = ({job}) => {
                         </span>
                         <span className = "publish-time" >
                                 <FontAwesomeIcon icon= "clock"   size="lg" className="icon"/>
-                                {moment(job.created_at ).startOf('day').fromNow()}
+                                {moment(new Date(job.created_at)).startOf('day').fromNow()}
                         </span>
                     </div>
                 </div>
