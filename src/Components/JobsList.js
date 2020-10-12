@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import JobItem from './JobItem';
 import {data} from '../dummy' ;
 import { Store } from '../Context/JobsContext';
+import Spinner from '../Components/Spinner';
 
 const JobsList = () => {
 
@@ -15,7 +16,7 @@ const JobsList = () => {
 
     return (
         <div className = "jobs-list">
-            {isLoading && (<h1>Loading ... </h1>)}
+            {isLoading && (<Spinner/>)}
             {error && (<h2>Error. Try Refreshing...</h2>)}
             {jobs.length !==0 && <ul>
                         {data.map(item => (
