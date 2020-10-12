@@ -86,8 +86,10 @@
                 .company-image {
                     height: 90px;
                     width: 90px;
-                    border: 1px solid $lightGrey;
                     border-radius: $borderRadius;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
                 }
 
                 .company-name {
