@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom' ;
 import moment from 'moment' ;
 const JobItem = ({job}) => {
 
-    const imgNotFound = '../assets/imgs/unnamed.png' ;
     return (
 
             <li className ='job-item'>

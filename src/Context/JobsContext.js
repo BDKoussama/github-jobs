@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React , {createContext , useReducer} from 'react'; 
+import React , {createContext , useEffect, useReducer} from 'react'; 
 
 
 const initialState = {
@@ -31,7 +31,10 @@ const StoreProvider = (props) => {
             default:
             return null
         }
-    } , initialState);
+    } , initialState , () => {
+        const localData = localStorage.getItem('jobs');
+        return localData ? JSON.parse(localData) : {} 
+    });
 
     const searchJobsBegin = () => dispatch({
         type : 'FETCH_JOBS_BEGIN'
@@ -61,6 +64,11 @@ const StoreProvider = (props) => {
             searchJobsFailed(error);
         }
     }
+
+    useEffect(() => {
+        localStorage.setItem('jobs' , JSON.stringify(state.jobs))
+    } , [state] )
+        
 
     return (
         <Store.Provider value = {{ state , searchJobs }}>

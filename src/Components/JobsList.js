@@ -9,6 +9,8 @@ const JobsList = () => {
 
     const {isLoading , error , jobs} = state ;
 
+    console.log(jobs);
+
     if (!jobs) {
         return <></>
     }
@@ -17,7 +19,7 @@ const JobsList = () => {
         <div className = "jobs-list">
             {isLoading && (<Spinner/>)}
             {error && (<h2>Error. Try Refreshing...</h2>)}
-            {jobs.length !==0 && <ul>
+            {jobs.length !== 0 && <ul>
                         {jobs.map(item => (
                                 <JobItem job = {item} key= {item.id} />
                         ))}
