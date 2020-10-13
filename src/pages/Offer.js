@@ -3,6 +3,10 @@ import { Link , useParams , useLocation} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Store } from '../Context/JobsContext';
 import moment from 'moment';
+import ReactMarkdown from 'react-markdown'
+
+
+
 const Offer = () => {
     // get job id from router params
     const { job_id } = useParams();
@@ -33,9 +37,7 @@ const Offer = () => {
 
                 <h2 className = "howto-apply">how to apply</h2>
 
-                <p className = "contact-info">
-                    {job.how_to_apply}
-                </p>
+                <ReactMarkdown source={job.how_to_apply} className ="contact-info"/>
 
             </div>
 
@@ -65,9 +67,7 @@ const Offer = () => {
 
 
                 <div className ='job-description'>
-                    <p>
-                        {job.description}
-                    </p>
+                    <ReactMarkdown source={job.description} />
                 </div>
 
             </div>
