@@ -23,7 +23,7 @@ const Search = () => {
 
     const {searchJobs} = useContext(Store);
 
-
+    
     const handleSubmit =  (e) => {
         e.preventDefault(); 
         searchJobs(search.value);

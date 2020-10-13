@@ -11,6 +11,7 @@ import {
   Switch,
   Route
 } from "react-router-dom"; 
+import StoreProvider from './Context/JobsContext' ; 
 
 library.add(faSuitcase , faGlobeAfrica, faClock , faLongArrowAltLeft);
 
@@ -18,21 +19,22 @@ library.add(faSuitcase , faGlobeAfrica, faClock , faLongArrowAltLeft);
 
 function App() {
   return (
-    <Router>
-       <div className = 'container'>
-          <Header/>
-          <Switch>
-                <Route exact path = "/" >
-                    <Home />
-                </Route>
-                
-                <Route path="/:job_id" children={<Offer />} />
+    <StoreProvider>
+        <Router>
+          <div className = 'container'>
+              <Header/>
+              <Switch>
+                    <Route exact path = "/" >
+                        <Home />
+                    </Route>
+                    
+                    <Route path="/:job_id" children={<Offer />} />
 
-            </Switch>
-            <Footer/>
-       </div>
-    </Router>
-   
+                </Switch>
+                <Footer/>
+          </div>
+        </Router>
+    </StoreProvider>
   );
 }
 

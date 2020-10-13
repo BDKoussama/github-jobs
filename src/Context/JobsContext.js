@@ -7,33 +7,34 @@ const initialState = {
     isLoading: false , 
     error : ''
 } 
-
 export const Store = createContext(initialState);
+
+const jobsReducer = (state , action) => {
+    switch (action.type) {
+        case 'FETCH_JOBS_BEGIN':
+            console.log('FETCH_JOBS_BEGIN');
+        return {...state , isLoading : true , error : '' , jobs : []}
+        
+    
+        case 'FETCH_JOBS_FAIL' : 
+            console.log('FETCH_JOBS_FAIL')
+        return {...state , isLoading : false , error : action.payload}
+
+        
+        case 'FETCH_JOBS_SUCCESS' :
+            console.log('FETCH_JOBS_SUCCESS')
+        return {...state , isLoading : false , error : '' , jobs : action.payload}
+
+        default:
+        return null
+    }
+}
 
 const StoreProvider = (props) => {
 
-    const [state , dispatch] = useReducer((state , action) => {
-        switch (action.type) {
-            case 'FETCH_JOBS_BEGIN':
-                console.log('FETCH_JOBS_BEGIN');
-            return {...state , isLoading : true , error : '' , jobs : []}
-            
-        
-            case 'FETCH_JOBS_FAIL' : 
-                console.log('FETCH_JOBS_FAIL')
-            return {...state , isLoading : false , error : action.payload}
-
-            
-            case 'FETCH_JOBS_SUCCESS' :
-                console.log('FETCH_JOBS_SUCCESS')
-            return {...state , isLoading : false , error : '' , jobs : action.payload}
-
-            default:
-            return null
-        }
-    } , initialState , () => {
+    const [state , dispatch] = useReducer(jobsReducer, initialState , () => {
         const localData = localStorage.getItem('jobs');
-        return localData ? JSON.parse(localData) : {} 
+        return localData ? JSON.parse(localData) : {}
     });
 
     const searchJobsBegin = () => dispatch({
@@ -66,7 +67,7 @@ const StoreProvider = (props) => {
     }
 
     useEffect(() => {
-        localStorage.setItem('jobs' , JSON.stringify(state.jobs))
+        localStorage.setItem('jobs' , JSON.stringify(state))
     } , [state] )
         
 

@@ -104,10 +104,18 @@
             align-items: center;
 
             .company-logo {
-                width: 42px;
-                height: 42px;
-                border: 1px solid $lightGrey;
-                border-radius: $borderRadius;
+                    height: 42px;
+                    width: 42px;
+                    border-radius: $borderRadius;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                   img{
+                        width: auto;
+                        height : auto;
+                        max-height: 100%;
+                        max-width: 100%;
+                   }
             }
 
             .company-info {
