@@ -56,7 +56,7 @@ const StoreProvider = (props) => {
         try {
             let URL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
             let data = await axios.get(URL , {
-                params: { markdown: true, page: 1 , description : desc }
+                params: { markdown: true, page: 1 , per_page : 5 ,description : desc }
             })
             .then(res => res.data);
             console.log(data);
