@@ -1,11 +1,11 @@
 import React from 'react'; 
 import SearchFilters from './Components/SearchFilters' ;
-import JobsList from './Components/JobsList' ;
+import Jobs from './Components/Jobs' ;
 
 const Content = () => (
     <div className = 'search-result'>
         <SearchFilters/>
-        <JobsList/>
+        <Jobs/>
     </div>
 )
 

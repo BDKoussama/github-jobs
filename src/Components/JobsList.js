@@ -1,33 +1,33 @@
-import React, { useContext } from 'react'; 
+import React , {useState} from 'react'; 
+import Pagination from './Pagination' ;
 import JobItem from './JobItem';
-import { Store } from '../Context/JobsContext';
-import Spinner from '../Components/Spinner';
 
-const JobsList = () => {
+const JobsList = ({jobs}) => {
+    const [currentPage , setCurrentPage] = useState(1);
+    const [jobsPerPage ] = useState(5);
 
-    const {state} = useContext(Store) ; 
+    // get current posts
+    const indexOfLastJob = currentPage * jobsPerPage ; 
+    const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+    const currentJobs = jobs.slice(indexOfFirstJob , indexOfLastJob);
 
-    const {isLoading , error , jobs} = state ;
-
-    console.log(jobs);
-
-    if (!jobs) {
-        return <></>
-    }
+    // change page
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
-        <div className = "jobs-list">
-            {isLoading && (<Spinner/>)}
-            {error && (<h2>Error. Try Refreshing...</h2>)}
-            {jobs.length !== 0 && <ul>
-                        {jobs.map(item => (
-                                <JobItem job = {item} key= {item.id} />
-                        ))}
-                    </ul>
-            }
-        </div>
+        <>
+            <ul>
+                {currentJobs.map(item => (
+                    <JobItem job = {item} key= {item.id} />
+                ))}
+            </ul>
+
+            <Pagination jobsPerPage = {jobsPerPage} totalJobs = {jobs.length} paginate = {paginate} />
+        </>
     )
 }
+
+
 
 
 export default JobsList ;
