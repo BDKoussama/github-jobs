@@ -1,6 +1,9 @@
 .pagination {
     display: inline-block;
+    float: right;
+
     .pagination-item {
+        cursor: pointer;
         float: left;
         border: 1px solid $lightGrey;
         width: 36px;
@@ -16,11 +19,20 @@
         span{
             text-decoration: none;
             color: $lightGrey;
-            cursor: pointer;
         }
         &:hover {
             border: none;
             background-color: $blue;
+            span {
+                color: white;
+            }
+        }
+    }
+
+    .active {
+        background-color: $blue;
+        border: none;
+        span {
             color: white;
         }
     }

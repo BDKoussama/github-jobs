@@ -1,7 +1,7 @@
 import React from 'react'; 
 
 
-const Pagination = ({jobsPerPage , totalJobs , paginate}) => {
+const Pagination = ({jobsPerPage , totalJobs , paginate , currentPage}) => {
 
     const pageNumbers = [];
 
@@ -13,8 +13,8 @@ const Pagination = ({jobsPerPage , totalJobs , paginate}) => {
         <nav>
             <ul className = 'pagination'>
                 {pageNumbers.length !== 0 && pageNumbers.map(number => (
-                     <li key={number} className = "pagination-item">
-                        <span onClick = {() => paginate(number)}>{number}</span>
+                     <li key={number} className = {`pagination-item ${number === currentPage ? 'active' : ''}`} onClick = {() => paginate(number)}>
+                        <span>{number}</span>
                      </li>
                 ))}
             </ul>
