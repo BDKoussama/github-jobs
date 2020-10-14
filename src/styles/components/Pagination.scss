@@ -1,7 +1,6 @@
 .pagination {
     display: inline-block;
     float: right;
-
     .pagination-item {
         cursor: pointer;
         float: left;
@@ -31,7 +30,6 @@
 
     .active {
         background-color: $blue;
-        border: none;
         span {
             color: white;
         }

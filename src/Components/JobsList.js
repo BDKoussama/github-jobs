@@ -22,7 +22,11 @@ const JobsList = ({jobs}) => {
                 ))}
             </ul>
 
-            <Pagination jobsPerPage = {jobsPerPage} totalJobs = {jobs.length} paginate = {paginate}  currentPage = {currentPage}/>
+            <Pagination jobsPerPage = {jobsPerPage} 
+                        totalJobs = {jobs.length} 
+                        paginate = {paginate}  
+                        currentPage = {currentPage}
+            />
         </>
     )
 }
