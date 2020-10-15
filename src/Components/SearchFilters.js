@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from 'react'; 
+import React from 'react'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-const SearchFilters = ({handleChange , locations , fullTime , setFullTime}) => {
+const SearchFilters = ({ onFulltimeChange , params , onChange}) => {
+
+    const locations  = [
+        {  name : 'London' , label :'london'  , isChecked : false },
+        {  name : 'Berlin'  , label :'berlin' , isChecked : false },
+        {  name : 'Amsterdam' , label :'amsterdam' , isChecked : false },
+        {  name : 'Newyork' , label :'newyork' , isChecked : false }
+    ];
 
     return (
         <div className ="search-filters">
+
             <label className="container-checkbox">Full time
-                <input type="checkbox" onChange = {() => setFullTime(!fullTime)}/>
+                <input type="checkbox"  name= "full_time" onChange = {onFulltimeChange} />
                 <span className="checkmark"></span>
             </label>
 
@@ -17,7 +25,7 @@ const SearchFilters = ({handleChange , locations , fullTime , setFullTime}) => {
 
                 <div className = "city-input">
                     <FontAwesomeIcon icon='globe-africa'  size="sm" className="location-icon"/>
-                    <input type="text" placeholder = "City, state, zip code or country"/>
+                    <input type="text" placeholder = "City, state, zip code or country" name = 'location' value = {params.location} onChange = {onChange}/>
                 </div>
 
                 <>
@@ -25,11 +33,11 @@ const SearchFilters = ({handleChange , locations , fullTime , setFullTime}) => {
                         <label className="container-checkbox" key = {`key_${index}`}>{item.name}
                             <input 
                                 type="checkbox" 
-                                name = {item.name}    
+                                name = "location"   
+                               // checked = {location.value === item.label}
+                                checked = {params.location === item.label}
                                 value = {item.label}  
-                                index = {index}   
-                                //checked = {locations[item.name]}              
-                                onChange = {handleChange}
+                                onChange = {onChange}
                             />
                             <span className="checkmark"></span>
                         </label>

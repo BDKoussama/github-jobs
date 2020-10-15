@@ -4,72 +4,43 @@ import {Store} from '../Context/JobsContext';
 import SearchFilters from '../Components/SearchFilters' ;
 import Jobs from '../Components/Jobs' ;
 
-const useFormInput = (initvalue) => {
-
-    const [value , setValue] = useState(initvalue) ;
-    const onChange = (e) => {
-        setValue(e.target.value) ;
-    }
-
-    return {
-        value ,
-        onChange
-    }
-}
-
 const Home = () => {
 
     const {searchJobs} = useContext(Store);
 
-    const search = useFormInput('');
+    const [full_time , setFullTime] = useState(false); 
+        
+    const [params, setParams] = useState({})
 
-    const [fullTime , setFullTime] = useState(false); 
-     
-    const [locations , setLocations] = useState([
-        { name : 'London' , label :'london'  , isChecked : false },
-        {  name : 'Berlin'  , label :'berlin' , isChecked : false },
-        {  name : 'Amsterdam' , label :'amsterdam' , isChecked : false },
-        {  name : 'Newyork' , label :'newyork' , isChecked : false }
-    ]);
-   
     const handleSubmit =  (e) => {
         e.preventDefault(); 
-        let desc = search.value ; 
-        let location = 'berlin';
-        let fulltime = fullTime ;
-        searchJobs(desc , location , fulltime);
+        searchJobs(params , full_time);
     }
     
-    const handleChange = (event) => {
-        let arr = locations.map(item => {
-            if(item.label === event.target.value) {
-                item.isChecked = !item.isChecked
-            }
-            return item ;
+    function handleParamChange(e) {
+        const param = e.target.name
+        const value = e.target.value
+        setParams(prevParams => {
+          return { ...prevParams, [param]: value }
         })
-        setLocations(arr);
+      }
+
+    const handleFulltimeChange = () => {
+        setFullTime(!full_time);
     }
 
     useEffect(() => {
-        // update jobs list 
-        let desc = search.value ; 
-        let location = 'berlin';
-        let fulltime = fullTime ;
-
-        searchJobs(desc ,location, fulltime );
-
-    } , [fullTime , locations] ) ;
+        console.log(params);
+        console.log(full_time)
+        searchJobs(params , full_time);
+    } , [params.location , full_time] ) ;
 
 
     return (
         <>
-            <Search search = {search} handleSubmit = {handleSubmit}/>
+            <Search params = {params} onChange = {handleParamChange} handleSubmit = {handleSubmit}  />
             <div className = 'search-result'>
-                <SearchFilters handleChange = {handleChange} 
-                               locations = {locations}
-                               fullTime = {fullTime}
-                               setFullTime = {setFullTime}
-                />
+                <SearchFilters onFulltimeChange = {handleFulltimeChange} params = {params} onChange = {handleParamChange}/>
                 <Jobs/>
             </div>
         </>

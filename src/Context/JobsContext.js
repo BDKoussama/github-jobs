@@ -51,16 +51,15 @@ const StoreProvider = (props) => {
         payload : data
     });
 
-    const searchJobs = async (desc , location ,fulltime ) => {
+    const searchJobs = async (params , full_time) => {
         searchJobsBegin() ;
         try {
             let URL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
             let data = await axios.get(URL , {
                 params: { 
                     markdown: true , 
-                    description : desc,
-                    location : location,
-                    full_time : fulltime 
+                    full_time,
+                    ...params
                 }
             })
             .then(res => res.data);
