@@ -7,6 +7,7 @@ const initialState = {
     isLoading: false , 
     error : ''
 } 
+
 export const Store = createContext(initialState);
 
 const jobsReducer = (state , action) => {
@@ -15,12 +16,10 @@ const jobsReducer = (state , action) => {
             console.log('FETCH_JOBS_BEGIN');
         return {...state , isLoading : true , error : '' , jobs : []}
         
-    
         case 'FETCH_JOBS_FAIL' : 
             console.log('FETCH_JOBS_FAIL')
         return {...state , isLoading : false , error : action.payload}
 
-        
         case 'FETCH_JOBS_SUCCESS' :
             console.log('FETCH_JOBS_SUCCESS')
         return {...state , isLoading : false , error : '' , jobs : action.payload}

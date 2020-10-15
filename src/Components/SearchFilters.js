@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-const SearchFilters = ({ onFulltimeChange , params , onChange}) => {
+const SearchFilters = ({ handleSubmit , onFulltimeChange , params , onChange}) => {
 
     const locations  = [
         {  name : 'London' , label :'london'  , isChecked : false },
@@ -12,7 +12,7 @@ const SearchFilters = ({ onFulltimeChange , params , onChange}) => {
     ];
 
     return (
-        <div className ="search-filters">
+        <form className ="search-filters" onSubmit = {handleSubmit}>
 
             <label className="container-checkbox">Full time
                 <input type="checkbox"  name= "full_time" onChange = {onFulltimeChange} />
@@ -25,7 +25,7 @@ const SearchFilters = ({ onFulltimeChange , params , onChange}) => {
 
                 <div className = "city-input">
                     <FontAwesomeIcon icon='globe-africa'  size="sm" className="location-icon"/>
-                    <input type="text" placeholder = "City, state, zip code or country" name = 'location' value = {params.location} onChange = {onChange}/>
+                    <input type="text" placeholder = "City, state, zip code or country" name = 'location' value = {params.location || ''} onChange = {onChange}/>
                 </div>
 
                 <>
@@ -43,9 +43,9 @@ const SearchFilters = ({ onFulltimeChange , params , onChange}) => {
                         </label>
                     ))}
                 </>
-
             </div>
-        </div>
+            <input type='submit' className = 'button-input' value='Apply Filters'/>
+        </form>
     )
 }
 
@@ -53,26 +53,3 @@ const SearchFilters = ({ onFulltimeChange , params , onChange}) => {
 export default SearchFilters ;
 
 
-
-/*
-    <label className="container-checkbox">London
-                    <input type="checkbox"  />
-                    <span className="checkmark"></span>
-                </label>
-
-                <label className="container-checkbox">Amsterdam
-                    <input type="checkbox"  />
-                    <span className="checkmark"></span>
-                </label>
-
-                <label className="container-checkbox">New york
-                    <input type="checkbox"  />
-                    <span className="checkmark"></span>
-                </label>
-
-                <label className="container-checkbox">Berlin
-                    <input type="checkbox"  />
-                    <span className="checkmark"></span>
-                </label>
-
-*/

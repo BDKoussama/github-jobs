@@ -25,6 +25,7 @@
             margin: 0;
             padding: 0;
             border: none;
+            color: $lightGrey;
         }
 
         .search-form__icon {
@@ -38,9 +39,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            padding-left: 15px;
             &::placeholder {
                 font-size: 12px;
-                color: $lightGrey;
                 font-weight: 400;
                 padding: 0;
             }

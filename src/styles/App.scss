@@ -23,6 +23,31 @@ body {
     min-height: 100%; 
 }
 
+input {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: $lightGrey;
+}
+
+.button-input {
+  background-color: $blue;
+  padding: 0.2em 1.5em;
+  margin-left: 15px;
+  float: right;
+  color: $white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border-radius: $borderRadius;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+      background-color: $onHoverBlue;
+  }
+}
+
 .container {
     position: relative;
     min-height: 100vh;

@@ -37,6 +37,7 @@
                 align-items: center;
                 margin-bottom: 40px;
                 background-color: $white;
+
                 .location-icon {
                     color: $lightGrey;
                 }
@@ -46,6 +47,8 @@
                     background-color: transparent;
                     width: 100%; 
                     outline: none;
+                    padding-left: 10px;
+                    color: $darkBlue;
                     &::placeholder {
                         font-family: 'Roboto', sans-serif;
                         font-size: 12px;
@@ -58,6 +61,12 @@
                         padding-left: 10px;
                     }
                 }
+            }
+            .button-input {
+                padding: 0.6em 1.5em;
+                margin: 15px auto;
+                float: none;
+                color: $white;
             }
         }
 
